@@ -10,6 +10,13 @@ body {
     align-items: center;
     height: 100vh; /* Full viewport height */
 }
+h2 {
+    color: black; /* Change to your preferred color */
+    font-size: 1.5em; /* Adjust size if needed */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 
 /* Form container styling */
 #create-account-form {
