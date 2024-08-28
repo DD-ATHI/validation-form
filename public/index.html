@@ -7,6 +7,9 @@
     <title>FORM VALIDATION</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/2bbac3a66c.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <script src="https://kit.fontawesome.com/2bbac3a66c.js" crossorigin="anonymous" ></script>
 </head>
 <body>
     <form id="create-account-form" action="result.html" method="GET">
@@ -17,26 +20,32 @@
         <div class="input-group">
             <label for="username">Name</label>
             <input type="text" id="username" placeholder="Name" name="username" maxlength="20" required>
+
+        
         </div>
         <!-- EMAIL -->
         <div class="input-group">
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="Email" name="email" required>
+            
         </div>
         <!-- PASSWORD -->
         <div class="input-group">
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Password" name="password" maxlength="15" required>
+            
         </div>
         <!-- CONFIRM PASSWORD -->
         <div class="input-group">
             <label for="confirm-password">Confirm Password</label>
             <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirmpassword" maxlength="15" required>
+            
         </div>
         <!-- MOBILE NUMBER -->
         <div class="input-group">
             <label for="mobile">Mobile Number:</label>
             <input type="tel" id="mobile" name="mobile" maxlength="10" pattern="[0-9]{10}" required>
+            
         </div>
         <!-- DATE OF BIRTH -->
         <div class="input-group">
@@ -91,6 +100,11 @@
             </div>
         </div>
     </form>
+    <div id="result" class="result-container" style="display:none;">
+        <h1>Thank You!</h1>
+        <p>Your details have been successfully submitted. Thanks!</p>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
 
     <!-- JAVASCRIPT -->
     <script src="app.js"></script>

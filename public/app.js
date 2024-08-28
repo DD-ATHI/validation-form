@@ -45,6 +45,28 @@ document.addEventListener("DOMContentLoaded", function() {
             valid = false;
         }
 
+        // Additional validation for mandatory fields
+        const fields = ['username', 'email', 'password', 'confirm-password', 'mobile', 'dob', 'place'];
+        fields.forEach(fieldId => {
+            const input = document.getElementById(fieldId);
+            if (input && !input.value) {
+                alert(`Please fill out the ${input.previousElementSibling.textContent}`);
+                valid = false;
+            }
+        });
+
+        const genderSelected = document.querySelector('input[name="gender"]:checked');
+        if (!genderSelected) {
+            alert('Please select a gender');
+            valid = false;
+        }
+
+        const favoriteFoodSelected = document.querySelectorAll('#favorite-food-menu input[type="checkbox"]:checked').length;
+        if (favoriteFoodSelected === 0) {
+            alert('Please select at least one favorite food');
+            valid = false;
+        }
+
         if (!valid) {
             event.preventDefault(); // Prevent form submission if validation fails
         } else {
@@ -52,6 +74,22 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault(); // Prevent actual form submission for demonstration
         }
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("create-account-form");
+        const result = document.getElementById("result");
+    
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Hide the form
+            form.style.display = "none";
+    
+            // Show the result
+            result.style.display = "block";
+        });
+    });
+    
 
     // Toggle favorite food menu visibility
     favoriteFoodDisplay.addEventListener("click", function() {
@@ -78,44 +116,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Add event listeners for the popup buttons
     document.querySelector(".popup button").addEventListener("click", closePopup);
-    function validateForm() {
-        const form = document.getElementById('create-account-form');
-        const fields = ['username', 'email', 'password', 'confirm-password', 'mobile', 'dob', 'place'];
-        let isValid = true;
-    
-        fields.forEach(field => {
-            const input = document.getElementById(field);
-            if (!input.value) {
-                isValid = false;
-                alert(`Please fill out the ${input.previousElementSibling.textContent}`);
-            }
-        });
-    
-        const genderSelected = document.querySelector('input[name="gender"]:checked');
-        if (!genderSelected) {
-            isValid = false;
-            alert('Please select a gender');
-        }
-    
-        const favoriteFoodSelected = document.querySelectorAll('#favorite-food-menu input[type="checkbox"]:checked').length;
-        if (favoriteFoodSelected === 0) {
-            isValid = false;
-            alert('Please select at least one favorite food');
-        }
-    
-        if (!isValid) {
-            return false; // Prevent form submission
-        }
-    
-        // Optional: Add password confirmation check here
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-        if (password !== confirmPassword) {
-            alert('Passwords do not match');
-            return false;
-        }
-    
-        return true; // Allow form submission if valid
-    }
-    
 });

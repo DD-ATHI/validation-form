@@ -10,7 +10,7 @@ body {
     align-items: center;
     height: 100vh; /* Full viewport height */
 }
-h2 {
+title h2 {
     color: black; /* Change to your preferred color */
     font-size: 1.5em; /* Adjust size if needed */
     margin: 0;
