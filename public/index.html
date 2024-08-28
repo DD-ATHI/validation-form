@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM VALIDATION</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2bbac3a66c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="create-account-form" action="result.html" method="GET">
+        <div class="title">
+            <h2>Personal Information</h2>
+        </div>
+        <!-- USERNAME -->
+        <div class="input-group">
+            <label for="username">Name</label>
+            <input type="text" id="username" placeholder="Name" name="username" maxlength="20" required>
+        </div>
+        <!-- EMAIL -->
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" name="email" required>
+        </div>
+        <!-- PASSWORD -->
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" name="password" maxlength="15" required>
+        </div>
+        <!-- CONFIRM PASSWORD -->
+        <div class="input-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirmpassword" maxlength="15" required>
+        </div>
+        <!-- MOBILE NUMBER -->
+        <div class="input-group">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" maxlength="10" pattern="[0-9]{10}" required>
+        </div>
+        <!-- DATE OF BIRTH -->
+        <div class="input-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <!-- GENDER -->
+        <div class="input-group">
+            <label>Gender:</label>
+            <div class="gender">
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="other" required>
+                <label for="other">Other</label>
+            </div>
+        </div>
+        <!-- PLACE -->
+        <div class="input-group">
+            <label for="place">Place:</label>
+            <select id="place" name="place" required>
+                <option value="" disabled selected>Select your place</option>
+                <option value="chennai">Chennai</option>
+                <option value="madurai">Madurai</option>
+                <option value="coimbatore">Coimbatore</option>
+            </select>
+        </div>
+        <!-- FAVORITE FOOD -->
+        <div class="input-group">
+            <label for="favorite-food">Favorite Food:</label>
+            <div class="custom-select">
+                <input type="text" id="favorite-food-display" placeholder="Select your favorite food..." readonly>
+                <div id="favorite-food-menu" class="select-items">
+                    <label><input type="checkbox" value="pizza"> Pizza</label>
+                    <label><input type="checkbox" value="burger"> Burger</label>
+                    <label><input type="checkbox" value="sushi"> Sushi</label>
+                    <label><input type="checkbox" value="pasta"> Pasta</label>
+                    <label><input type="checkbox" value="salad"> Salad</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <button type="submit" class="btn" onclick="return validateForm()">Submit</button>
+            <div class="popup" id="popup">
+                <img src="image.png" alt="completed">
+                <h2>Thank You!</h2>
+                <p>Your details have been successfully submitted. Thanks!</p>
+                <br>
+                <button type="button" onclick="closePopup()">OK</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+</body>
+</html>

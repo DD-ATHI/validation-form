@@ -1,0 +1,170 @@
+/* Base styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Light gray background for the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Form container styling */
+#create-account-form {
+    max-width: 100%;
+    width: 100%;
+    max-width: 600px; /* Set a max-width for larger screens */
+    padding: 20px;
+    background-color: #aed0f6; /* Blue background color */
+    color: white; /* White text color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between elements */
+    box-sizing: border-box;
+}
+
+/* Input group styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between label and input */
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+/* Input styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff; /* White background for inputs */
+    box-sizing: border-box;
+}
+/* Custom select container */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Style the display input */
+#favorite-food-display {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff; /* White background */
+    color: #000; /* Black text */
+    cursor: pointer;
+}
+
+/* Dropdown items container */
+.select-items {
+    display: none; /* Hidden initially */
+    position: absolute;
+    width: 100%;
+    background-color: #a2c0f4; /* White background */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+.select-items.show {
+    display: block;
+}
+
+
+/* Style each item */
+.select-items label {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.select-items label:hover {
+    background-color: #7fb6f1; /* Highlight on hover */
+}
+
+/* Show the dropdown when the input is clicked */
+.custom-select.open .select-items {
+    display: block;
+}
+
+
+
+
+/* Button styling */
+.btn {
+    background-color: #7fb6f1; /* Darker blue for the button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%; /* Full width for the button */
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #91beed; /* Even darker blue on hover */
+}
+
+/* Popup styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#9dc3ec; /* Blue background color */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.popup img {
+    width: 100px;
+    height: auto;
+}
+
+.popup button {
+    background-color: #b6d8fb; /* Darker blue for the button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%; /* Full width for the button */
+    box-sizing: border-box;
+}
+
+.popup button:hover {
+    background-color: #b3d2f3; /* Even darker blue on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #create-account-form {
+        padding: 10px;
+    }
+}
