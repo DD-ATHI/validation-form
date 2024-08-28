@@ -12,7 +12,7 @@ body {
 }
 title h2 {
     color: black; /* Change to your preferred color */
-    font-size: 1.5em; /* Adjust size if needed */
+    font-size: 1.5rem; /* Adjust size if needed */
     margin: 0;
     padding: 0;
     text-align: center;

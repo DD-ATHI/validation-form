@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const today = new Date().toISOString().split('T')[0];
     dobField.setAttribute('max', today);
 
+    form.addEventListener('submit', (event)=>{
+    
+    validateForm();
+    console.log(isFormValid());
+    if(isFormValid()==true){
+        form.submit();
+     }else {
+         event.preventDefault();
+     }
+
+});
+
     form.addEventListener("submit", function(event) {
         let valid = true;
 
